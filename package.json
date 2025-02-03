@@ -1,0 +1,31 @@
+{
+  "name": "mobile-app-testing",
+  "version": "1.0.0",
+  "description": "Mobile app testing with Appium and WebdriverIO",
+  "scripts": {
+    "test:android:tdd": "cross-env PLATFORM=android wdio run ./wdio.conf.tdd.js",
+    "test:ios:tdd": "cross-env PLATFORM=ios wdio run ./wdio.conf.tdd.js",
+    "test:android:bdd": "cross-env PLATFORM=android wdio run ./wdio.conf.cucumber.js",
+    "test:ios:bdd": "cross-env PLATFORM=ios wdio run ./wdio.conf.cucumber.js",
+    "report:allure": "allure generate allure-results --clean && allure open",
+    "report": "allure generate allure-results --clean && allure open"
+  },
+  "dependencies": {
+    "22": "^0.0.0",
+    "@wdio/allure-reporter": "^8.x",
+    "@wdio/local-runner": "^9.5.4",
+    "allure-commandline": "^2.x",
+    "appium": "^2.15.0"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.3.1",
+    "@wdio/appium-service": "^9.5.4",
+    "@wdio/cli": "^9.5.5",
+    "@wdio/cucumber-framework": "^9.5.0",
+    "@wdio/mocha-framework": "^9.5.0",
+    "@wdio/spec-reporter": "^9.5.0",
+    "appium-uiautomator2-driver": "^3.9.8",
+    "mocha": "^11.0.1",
+    "webdriverio": "^9.5.4"
+  }
+}
